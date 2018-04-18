@@ -1,0 +1,17 @@
+D:\_OSMON\PROJECT\VisualStudio\ConvenientScreenshot\ConvenientScreenshot\bin\Debug\ConvenientScreenshot.exe.config
+D:\_OSMON\PROJECT\VisualStudio\ConvenientScreenshot\ConvenientScreenshot\bin\Debug\ConvenientScreenshot.exe
+D:\_OSMON\PROJECT\VisualStudio\ConvenientScreenshot\ConvenientScreenshot\bin\Debug\ConvenientScreenshot.pdb
+D:\_OSMON\PROJECT\VisualStudio\ConvenientScreenshot\ConvenientScreenshot\obj\Debug\ConvenientScreenshot.csprojResolveAssemblyReference.cache
+D:\_OSMON\PROJECT\VisualStudio\ConvenientScreenshot\ConvenientScreenshot\obj\Debug\MainWindow.g.cs
+D:\_OSMON\PROJECT\VisualStudio\ConvenientScreenshot\ConvenientScreenshot\obj\Debug\App.g.cs
+D:\_OSMON\PROJECT\VisualStudio\ConvenientScreenshot\ConvenientScreenshot\obj\Debug\ConvenientScreenshot_MarkupCompile.cache
+D:\_OSMON\PROJECT\VisualStudio\ConvenientScreenshot\ConvenientScreenshot\obj\Debug\ConvenientScreenshot_MarkupCompile.lref
+D:\_OSMON\PROJECT\VisualStudio\ConvenientScreenshot\ConvenientScreenshot\obj\Debug\MainWindow.baml
+D:\_OSMON\PROJECT\VisualStudio\ConvenientScreenshot\ConvenientScreenshot\obj\Debug\ConvenientScreenshot.g.resources
+D:\_OSMON\PROJECT\VisualStudio\ConvenientScreenshot\ConvenientScreenshot\obj\Debug\ConvenientScreenshot.Properties.Resources.resources
+D:\_OSMON\PROJECT\VisualStudio\ConvenientScreenshot\ConvenientScreenshot\obj\Debug\ConvenientScreenshot.csproj.GenerateResource.cache
+D:\_OSMON\PROJECT\VisualStudio\ConvenientScreenshot\ConvenientScreenshot\obj\Debug\ConvenientScreenshot.csproj.CoreCompileInputs.cache
+D:\_OSMON\PROJECT\VisualStudio\ConvenientScreenshot\ConvenientScreenshot\obj\Debug\ConvenientScreenshot.exe
+D:\_OSMON\PROJECT\VisualStudio\ConvenientScreenshot\ConvenientScreenshot\obj\Debug\ConvenientScreenshot.pdb
+D:\_OSMON\PROJECT\VisualStudio\ConvenientScreenshot\ConvenientScreenshot\obj\Debug\ScreenshotWindow.g.cs
+D:\_OSMON\PROJECT\VisualStudio\ConvenientScreenshot\ConvenientScreenshot\obj\Debug\ScreenshotWindow.baml
