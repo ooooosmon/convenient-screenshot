@@ -15,3 +15,4 @@ D:\_OSMON\PROJECT\VisualStudio\ConvenientScreenshot\ConvenientScreenshot\obj\Deb
 D:\_OSMON\PROJECT\VisualStudio\ConvenientScreenshot\ConvenientScreenshot\obj\Debug\ConvenientScreenshot.pdb
 D:\_OSMON\PROJECT\VisualStudio\ConvenientScreenshot\ConvenientScreenshot\obj\Debug\ScreenshotWindow.g.cs
 D:\_OSMON\PROJECT\VisualStudio\ConvenientScreenshot\ConvenientScreenshot\obj\Debug\ScreenshotWindow.baml
+D:\_OSMON\PROJECT\VisualStudio\ConvenientScreenshot\ConvenientScreenshot\obj\Debug\App.baml

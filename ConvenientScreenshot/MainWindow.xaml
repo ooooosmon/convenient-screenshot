@@ -5,18 +5,27 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ConvenientScreenshot"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Style="{StaticResource window_style}"
+        Title="MainWindow" Height="599" Width="800" WindowStartupLocation="CenterScreen" ResizeMode="NoResize" Background="#FF2D2D30" AllowsTransparency="True" WindowStyle="None">
     <Grid>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="251*"/>
-            <ColumnDefinition Width="541*"/>
-        </Grid.ColumnDefinitions>
+        <!-- title bar -->
+        <StackPanel x:Name="spnlWindowTopBar" VerticalAlignment="Top" Height="28" Orientation="Horizontal" FlowDirection="RightToLeft" MouseDown="spnlWindowTopBar_MouseDown" Background="#00000000">
+            <Button x:Name="btnWindowStateClose" Content="✕" Style="{StaticResource window_state_close_button}" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" HorizontalAlignment="Right" VerticalAlignment="Top" Width="75" Height="28" Background="#00000000" BorderBrush="#00000000" Foreground="White" BorderThickness="0" UseLayoutRounding="False" Click="btnWindowStateClose_Click" Cursor="Arrow"/>
+            <Button x:Name="btnWindowStateMaxMin" Content="☐" Style="{StaticResource window_state_maxmin_button}" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" HorizontalAlignment="Right" VerticalAlignment="Top" Width="75" Height="28" Background="#00000000" BorderBrush="#00000000" Foreground="White" BorderThickness="0" UseLayoutRounding="False" Cursor="Arrow" Click="btnWindowStateMaxMin_Click"/>
+            <Button x:Name="btnWindowStateMinimun" Content="—" Style="{StaticResource window_state_maxmin_button}" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" HorizontalAlignment="Right" VerticalAlignment="Top" Width="75" Height="28" Background="#00000000" BorderBrush="#00000000" Foreground="White" BorderThickness="0" UseLayoutRounding="False" Margin="0,0,80,0" Click="btnWindowStateMinimun_Click"/>
+        </StackPanel>
 
-        <Canvas Grid.ColumnSpan="2" Margin="90,10,10,10" Background="#FFF1F1F1">
-            <Image x:Name="imgPreview" HorizontalAlignment="Left" Height="399" VerticalAlignment="Top" Width="692" Grid.ColumnSpan="2"/>
-        </Canvas>
-        <Button x:Name="btnScreenshot" Content="Button" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="75" Click="btnScreenshot_Click"/>
+        <!-- preview -->
+        <Button x:Name="btnScreenshot" Style="{StaticResource dark_default_button}" Content="Button" HorizontalAlignment="Left" Margin="10,33,0,0" VerticalAlignment="Top" Width="75" Click="btnScreenshot_Click" Height="20" Background="#FF2D2D30" BorderBrush="#FF252529" Foreground="White"/>
+        <Grid Margin="124,33,10,167" Background="#FF252529">
+            <Image x:Name="imgPreview" ScrollViewer.VerticalScrollBarVisibility="Disabled" />
+        </Grid>
+
+        <!-- history -->
+        <ScrollViewer x:Name="svHistoryList" Height="152" HorizontalScrollBarVisibility="Auto" RenderTransformOrigin="0.517,0.73" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch" Margin="10,417,10,10" VerticalScrollBarVisibility="Disabled" VerticalAlignment="Bottom">
+            <StackPanel x:Name="spnlImgHistoryList" Height="152" Orientation="Horizontal" Background="#FF252529" CanHorizontallyScroll="True" ScrollViewer.CanContentScroll="True" ScrollViewer.HorizontalScrollBarVisibility="Visible" ScrollViewer.VerticalScrollBarVisibility="Disabled"/>
+        </ScrollViewer>
+        <CheckBox x:Name="cbTooglePreviewImgSize" Content="Show Origin Size" HorizontalAlignment="Left" Margin="10,58,0,0" VerticalAlignment="Top" Foreground="White" Click="cbTooglePreviewImgSize_Click"/>
 
     </Grid>
-
 </Window>

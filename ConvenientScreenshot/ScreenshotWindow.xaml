@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ConvenientScreenshot"
         mc:Ignorable="d"
-        Title="ScreenshotWindow" Height="450" Width="800" ResizeMode="NoResize" WindowState="Maximized" WindowStartupLocation="CenterScreen" WindowStyle="None" Loaded="Window_Loaded">
+        Title="ScreenshotWindow" Height="450" Width="800" ResizeMode="NoResize" WindowState="Maximized" WindowStartupLocation="CenterScreen" WindowStyle="None" OpacityMask="Black">
 
     <Canvas x:Name="canvas" MouseDown="Canvas_MouseDown" MouseMove="Canvas_MouseMove" MouseUp="Canvas_MouseUp" Background="Transparent" >
         <DockPanel x:Name="dpnlOkCancelGroup" Height="23" LastChildFill="False" Canvas.Left="10" Canvas.Top="10" Width="155">
