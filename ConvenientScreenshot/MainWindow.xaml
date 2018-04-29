@@ -16,8 +16,8 @@
         </StackPanel>
 
         <!-- preview -->
-        <Button x:Name="btnScreenshot" Style="{StaticResource dark_default_button}" Content="Button" HorizontalAlignment="Left" Margin="10,33,0,0" VerticalAlignment="Top" Width="75" Click="btnScreenshot_Click" Height="20" Background="#FF2D2D30" BorderBrush="#FF252529" Foreground="White"/>
-        <Grid Margin="124,33,10,167" Background="#FF252529">
+        <Button x:Name="btnScreenshot" Style="{StaticResource dark_default_button}" Content="Screenshot" HorizontalAlignment="Left" Margin="10,33,0,0" VerticalAlignment="Top" Width="75" Click="btnScreenshot_Click" Height="20" Background="#FF302D2D" BorderBrush="#FF252529" Foreground="White"/>
+        <Grid Margin="92,33,10,167" Background="#FF252529">
             <Image x:Name="imgPreview" ScrollViewer.VerticalScrollBarVisibility="Disabled" />
         </Grid>
 
@@ -25,7 +25,7 @@
         <ScrollViewer x:Name="svHistoryList" Height="152" HorizontalScrollBarVisibility="Auto" RenderTransformOrigin="0.517,0.73" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch" Margin="10,417,10,10" VerticalScrollBarVisibility="Disabled" VerticalAlignment="Bottom">
             <StackPanel x:Name="spnlImgHistoryList" Height="152" Orientation="Horizontal" Background="#FF252529" CanHorizontallyScroll="True" ScrollViewer.CanContentScroll="True" ScrollViewer.HorizontalScrollBarVisibility="Visible" ScrollViewer.VerticalScrollBarVisibility="Disabled"/>
         </ScrollViewer>
-        <CheckBox x:Name="cbTooglePreviewImgSize" Content="Show Origin Size" HorizontalAlignment="Left" Margin="10,58,0,0" VerticalAlignment="Top" Foreground="White" Click="cbTooglePreviewImgSize_Click"/>
+        <CheckBox x:Name="cbTooglePreviewImgSize" Content="Origin Size" HorizontalAlignment="Left" Margin="10,58,0,0" VerticalAlignment="Top" Foreground="White" Click="cbTooglePreviewImgSize_Click"/>
 
     </Grid>
 </Window>

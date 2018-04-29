@@ -16,6 +16,22 @@ using System.Collections.Generic;
 
 namespace ConvenientScreenshot
 {
+    class ImageOfHistory
+    {
+        public int id = -1;
+        public Controls.Image image;
+        public ImageSource imagesource;
+        public Bitmap bitmap;
+
+        public ImageOfHistory (int id, Controls.Image img, ImageSource imgsrc, Bitmap bmp)
+        {
+            this.id = id;
+            this.image = img;
+            this.imagesource = imgsrc;
+            this.bitmap = bmp;
+        }
+    }
+
     /// <summary>
     /// Interaction logic for MainWindow.xaml
     /// </summary>
@@ -23,7 +39,8 @@ namespace ConvenientScreenshot
     {
         public static int ScreenWidth  = (int)SystemParameters.PrimaryScreenWidth;
         public static int ScreenHeight = (int)SystemParameters.PrimaryScreenHeight;
-        private List<Controls.Image> history = new List<Controls.Image>();
+        //private List<Controls.Image> history = new List<Controls.Image>();
+        private List<ImageOfHistory> history = new List<ImageOfHistory>();
         private WindowState preWindowState;
         private WindowState curWindowState;
 
@@ -40,10 +57,6 @@ namespace ConvenientScreenshot
             preWindowState = this.WindowState;
             this.WindowState = state;
             curWindowState = state;
-
-            if (state == WindowState.Maximized || state == WindowState.Normal)
-            {
-            }
         }
 
         public void RestoreWindowState ()
@@ -51,7 +64,7 @@ namespace ConvenientScreenshot
             SetWindowState(preWindowState);
         }
 
-        public void SetPreview (ImageSource imgsrc)
+        public void SetImageToPreviewAndHistory (Bitmap bmp, ImageSource imgsrc)
         {
             var img = new Controls.Image();
             var len = spnlImgHistoryList.Height;
@@ -62,12 +75,44 @@ namespace ConvenientScreenshot
             img.Width = len;
             img.Margin = new Thickness(10);
             img.Source = imgsrc;
+            img.MouseDown += HistoryImage_MouseDown;
+            img.MouseEnter += HistoryImage_MouseEnter;
+            img.MouseLeave += HistoryImage_MouseLeave;
+            ImageOfHistory ioh = new ImageOfHistory(history.Count, img, imgsrc, bmp);
 
-            // Store the screenshot history to the array.
-            history.Insert(0, img);
+            history.Insert(0, ioh);
+            spnlImgHistoryList.Children.Insert(0, ioh.image);
+        }
+        public void SetImageToReview (ImageSource imgsrc, bool copyToClipboard=true)
+        {
+            imgPreview.Source = imgsrc;
+            if (copyToClipboard)
+                Clipboard.SetData(DataFormats.Bitmap, imgsrc);
+        }
 
-            // Add the image to the history panel.
-            spnlImgHistoryList.Children.Insert(0, img);
+        private void HistoryImage_MouseDown (object sender, MouseButtonEventArgs e)
+        {
+            var image = sender as Controls.Image;
+            var index = spnlImgHistoryList.Children.IndexOf(image);
+            SetImageToReview(history[index].imagesource, false);
+        }
+        private void HistoryImage_MouseEnter (object sender, MouseEventArgs e)
+        {
+            var image = sender as Controls.Image;
+            var index = spnlImgHistoryList.Children.IndexOf(image);
+            var originSide = spnlImgHistoryList.Height;//(spnlImgHistoryList.Children[index] as Controls.Image).Width;
+            (spnlImgHistoryList.Children[index] as Controls.Image).Width = originSide + 10;
+            (spnlImgHistoryList.Children[index] as Controls.Image).Height = originSide + 10;
+
+        }
+        private void HistoryImage_MouseLeave(object sender, MouseEventArgs e)
+        {
+            var image = sender as Controls.Image;
+            var index = spnlImgHistoryList.Children.IndexOf(image);
+            var originSide = spnlImgHistoryList.Height;//(spnlImgHistoryList.Children[index] as Controls.Image).Width;
+            (spnlImgHistoryList.Children[index] as Controls.Image).Width = originSide;
+            (spnlImgHistoryList.Children[index] as Controls.Image).Height = originSide;
+
         }
 
         // Take screenshot.
@@ -159,5 +204,6 @@ namespace ConvenientScreenshot
                 imgPreview.Stretch = Stretch.Uniform;
             }
         }
+
     }
 }

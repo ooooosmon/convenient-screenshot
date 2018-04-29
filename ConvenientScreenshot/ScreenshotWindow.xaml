@@ -8,9 +8,30 @@
         Title="ScreenshotWindow" Height="450" Width="800" ResizeMode="NoResize" WindowState="Maximized" WindowStartupLocation="CenterScreen" WindowStyle="None" OpacityMask="Black">
 
     <Canvas x:Name="canvas" MouseDown="Canvas_MouseDown" MouseMove="Canvas_MouseMove" MouseUp="Canvas_MouseUp" Background="Transparent" >
-        <DockPanel x:Name="dpnlOkCancelGroup" Height="23" LastChildFill="False" Canvas.Left="10" Canvas.Top="10" Width="155">
-            <Button x:Name="btnOk" Content="OK" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Click="btnOk_Click"/>
-            <Button x:Name="btnCancel" Content="Cancel" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Click="btnCancel_Click"/>
-        </DockPanel>
+        <Border x:Name="toolbar" BorderBrush="Black" BorderThickness="0" Canvas.Left="-100" Canvas.Top="0" Width="90" Height="30" CornerRadius="3" Background="#FFEEEEEE" >
+            <Border.Effect>
+                <DropShadowEffect BlurRadius="10" ShadowDepth="0"/>
+            </Border.Effect>
+
+            <StackPanel Canvas.Left="-100" Canvas.Top="0" Orientation="Horizontal" Margin="0" Height="30" Width="90">
+                <Grid x:Name="button_copyToClipboard" MouseDown="MouseDown_CopyToClipboard" Background="#00000000" MouseEnter="MouseEnter_FinishToolButton" MouseLeave="MouseLeave_FinishToolButton" ToolTip="copy to clipbaord, review and history">
+                    <Image Source="C:\Users\Otis\Desktop\copy.png" Stretch="Uniform" Margin="5" />
+                </Grid>
+                <Grid x:Name="button_addToReviewAndHistory" Background="#00000000" MouseDown="MouseDown_AddToReviewAndHistory" MouseEnter="MouseEnter_FinishToolButton" MouseLeave="MouseLeave_FinishToolButton" ToolTip="copy the screenshot to review and history. ( this action will not copy to clipboard )">
+                    <Image Source="C:\Users\Otis\Desktop\forward-arrow.png" Stretch="Uniform" Margin="5" />
+                </Grid>
+                <Grid x:Name="button_abandonScreenshot" Background="#00000000" MouseDown="MouseDown_AbandonScreenshot" MouseEnter="MouseEnter_FinishToolButton" MouseLeave="MouseLeave_FinishToolButton" ToolTip="Abandon">
+                    <Image Source="C:\Users\Otis\Desktop\cancel.png" Stretch="Uniform" Margin="5" />
+                </Grid>
+            </StackPanel>
+        </Border>
+
+        <Border x:Name="infobar" BorderThickness="0" Canvas.Left="-100" Canvas.Top="46" Height="30" CornerRadius="3" Background="#99000000" BorderBrush="#99000000" >
+            <StackPanel Canvas.Left="-100" Canvas.Top="0" Orientation="Horizontal" Margin="0" Height="30">
+                <Grid MouseDown="MouseDown_CopyToClipboard" Background="#00000000">
+                    <TextBlock x:Name="label_RectSize" Text="0 x 0" Background="{x:Null}"  Margin="5" Focusable="False" Foreground="White" />
+                </Grid>
+            </StackPanel>
+        </Border>
     </Canvas>
 </Window>
